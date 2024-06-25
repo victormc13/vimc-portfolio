@@ -1,8 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import SocialTag from '../components/SocialTag.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import MailIcon from '../icons/Mail.astro';
 ---
 
 <Layout title="Victor Miñope portfolio's">
-  <main></main>
+  <main>
+    <section class="w-full md:mx-auto lg:w-3/6 py-16 md:py-44">
+      <img
+        class="rounded-full size-44 md:size-48 flex justify-center items-center mx-auto lg:mx-0 md:block"
+        src="https://avatars.githubusercontent.com/u/110580299?v=4"
+        alt="Victor Miñope photo"
+      />
+      <h1
+        class="text-white text-center font-bold pb-10 px-4 text-3xl justify-center md:text-left md:text-5xl md:flex md:flex-row gap-x-4"
+      >
+        Bienvenido, soy Victor Miñope<a
+          href="https://www.linkedin.com/in/victormc13/"
+          target="_blank"
+          class="flex justify-center items-center text-center"
+          rel="noopener noreferrer"
+          ><Badge>Disponibilidad inmediata</Badge></a
+        >
+      </h1>
+      <h2 class="text-wrap md:text-2xl px-2">
+        <span>+2 años de experiencia en </span><span class="text-blue-400"
+          >Desarrollo web.
+        </span><span
+          >Me encanta solucionar problemas y crear aplicaciones destacables.
+          <span class="text-red-400"
+            >Desde Lima, P<span class="text-white">er</span>ú.
+          </span><br />
+          <span class="opacity-75"
+            >Creo en el poder transformador de la tecnología, me dedico a
+            mejorar mis habilidades y convertirme en un activo valioso en el
+            ámbito digital.</span
+          >
+        </span>
+        <nav class="flex flex-wrap gap-x-2 pt-6">
+          <SocialTag href="https://www.linkedin.com/in/victormc13/">
+            <LinkedInIcon class="size-3" />
+            LinkedIn
+          </SocialTag>
+          <SocialTag href="https://github.com/victormc13">
+            <GitHubIcon class="size-3" />
+            GitHub
+          </SocialTag>
+          <SocialTag>
+            <MailIcon class="size-3" />
+            Contáctame
+          </SocialTag>
+        </nav>
+      </h2>
+    </section>
+  </main>
 </Layout>
