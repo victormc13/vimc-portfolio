@@ -23,29 +23,31 @@ const { title } = Astro.props;
     <!-- <div
       class="absolute inset-0 -z-10 h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,119,255,0.3),rgba(255,255,255,0))]"
     > -->
-    <div class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#04437a_100%)]"></div>
+    <div
+      class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#04437a_100%)]"
+    >
     </div>
-    <Header />
-    <slot />
   </body>
-  <style is:global>
-    :root {
-      color-scheme: light dark;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      width: 100%;
-      font-family: 'Onest Variable', system-ui, sans-serif;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-    }
-  </style>
+  <Header />
+  <slot />
 </html>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    width: 100%;
+    font-family: 'Onest Variable', system-ui, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+</style>
