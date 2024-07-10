@@ -1,39 +1,35 @@
 ---
+import VMover from '../../icons/vm-logo/VM-over.astro';
+import VMseparated from '../../icons/vm-logo/VM-sidebyside.astro';
 import Navbar from '../Header/Navbar/Navbar.astro';
+import MenuHamburgerIcon from '../../icons/header/MenuHamburger.astro';
 ---
 
 <header
-  class="w-full h-22 flex justify-between sm:justify-center items-center md:h-32 py-2 md:p-0 fixed top-0 bg-opacity-70 bg-black-400 backdrop-blur-lg z-50 lg:gap-x-24"
+  class="w-full h-22 flex justify-between items-center py-2 sm:justify-center md:p-0 fixed top-0 bg-opacity-70 bg-black-400 backdrop-blur-lg z-50 gap-2 md:gap-x-6 lg:gap-x-24"
 >
-  <img
-    class="rounded-full lg:size-20 lg:w-auto size-16 w-1/3"
-    src="VM-logo.svg"
-    alt="Victor Miñope"
-  />
-  <Navbar />
-  <button class="w-1/3 lg:w-auto">Download CV</button>
-
-  <button
-    data-collapse-toggle="navbar-default"
-    type="button"
-    class="inline-flex items-center p-2 w-1/3 h-10 justify-center text-sm text-white-500 rounded-lg sm:hidden hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-    aria-controls="navbar-default"
-    aria-expanded="false"
-    onclick="document.getElementById('navbar-default').classList.toggle('hidden')"
-  >
-    <svg
-      class="w-5 h-5"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 17 14"
+  <a href="/" class="w-1/3 flex justify-center">
+    <VMover class="w-auto size-12 md:hidden" />
+    <VMseparated class="w-full size-16 hidden md:block" />
+  </a>
+  <Navbar id="navbar-default" />
+  <span class="w-1/3 flex justify-center">
+    <button
+      class="w-auto p-2 border-2 md:w-full lg:w-auto md:px-1 md:text-pretty md:py-3 lg:p-3 rounded-lg border-slate-400 hover:bg-blue-600"
+      >Revisar CV</button
     >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M1 1h15M1 7h15M1 13h15"></path>
-    </svg>
-  </button>
+  </span>
+
+  <span class="md:hidden w-1/3 flex justify-center md:justify-end">
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="items-center p-2 h-10 justify-center text-sm text-white-500 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+      onclick="document.getElementById('navbar-default').classList.toggle('hidden');document.body.classList.add('no-scroll')"
+    >
+      <MenuHamburgerIcon />
+    </button>
+  </span>
 </header>
