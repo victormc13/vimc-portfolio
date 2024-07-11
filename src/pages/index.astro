@@ -1,32 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 import Badge from '../components/Badge.astro';
 import SocialTag from '../components/SocialTag.astro';
-import LinkedInIcon from '../icons/LinkedIn.astro';
-import GitHubIcon from '../icons/GitHub.astro';
-import MailIcon from '../icons/Mail.astro';
+import LinkedInIcon from '../icons/social-media/LinkedIn.astro';
+import GitHubIcon from '../icons/social-media/GitHub.astro';
+import MediumIcon from '../icons/social-media/Medium.astro';
+import MailIcon from '../icons/social-media/Mail.astro';
+import SkillIcon from '../icons/section-headings/Skills.astro';
+import Skills from '../components/Skills-section/Skills.astro';
+import Projects from '../components/Projects-section/Projects.astro';
+import ProjectIcon from '../icons/section-headings/Projects.astro';
 ---
 
-<Layout title="Victor Miñope's portfolio">
+<Layout
+  title="Victor Miñope porfolio - Desarrollador y Programador Web"
+  description="Desarrollador web con más de 2 años de experiencia en el desarrollo de aplicaciones web. Creo en el poder transformador de la tecnología y me dedico a mejorar mis habilidades y convertirme en un activo valioso en el ámbito digital. Desde Lima, Perú."
+>
   <main>
-    <section class="w-full h-full md:mx-auto lg:w-3/6 py-2 md:py-2">
+    <SectionContainer>
       <img
-        class="rounded-full size-44 md:size-48 flex justify-center items-center mx-auto lg:mx-0 md:block"
+        class="rounded-full size-36 md:size-48 flex justify-center items-center mx-auto md:block md:m-0"
         src="https://avatars.githubusercontent.com/u/110580299?v=4"
-        alt="Victor Miñope photo"
+        alt="Victor Miñope"
       />
       <h1
-        class="text-white text-center font-bold pb-10 px-3 text-3xl justify-center md:text-left md:text-5xl md:flex md:flex-row gap-x-4"
+        class="text-white text-center font-bold pb-10 text-3xl justify-center md:text-left md:text-5xl md:flex md:flex-row md:justify-start gap-4"
       >
         Bienvenido, soy Victor Miñope<a
           href="https://www.linkedin.com/in/victormc13/"
           target="_blank"
           class="flex justify-center items-center text-center"
-          rel="noopener noreferrer"
-          ><Badge>Disponibilidad inmediata</Badge></a
+          rel="noopener noreferrer"><Badge>Disponibilidad inmediata</Badge></a
         >
       </h1>
-      <h2 class="text-wrap md:text-2xl px-2">
+      <h2 class="text-wrap md:text-2xl">
         <span>+2 años de experiencia en </span><span class="text-blue-400"
           >Desarrollo web.
         </span><span
@@ -40,21 +48,39 @@ import MailIcon from '../icons/Mail.astro';
             ámbito digital.</span
           >
         </span>
-        <nav class="flex flex-wrap justify-center gap-x-4 pt-6">
-          <SocialTag href="https://www.linkedin.com/in/victormc13/">
-            <LinkedInIcon class="size-3" />
-            LinkedIn
-          </SocialTag>
-          <SocialTag href="https://github.com/victormc13">
-            <GitHubIcon class="size-3" />
-            GitHub
-          </SocialTag>
-          <SocialTag href="sdfasd">
-            <MailIcon class="size-3" />
-            Contáctame
-          </SocialTag>
-        </nav>
       </h2>
-    </section>
+      <nav class="flex flex-wrap justify-center gap-4 pt-10 max-w-md mx-auto">
+        <SocialTag href="https://www.linkedin.com/in/victormc13/">
+          <LinkedInIcon class="size-3 md:size-5" />
+          LinkedIn
+        </SocialTag>
+        <SocialTag href="https://github.com/victormc13">
+          <GitHubIcon class="size-3 md:size-5" />
+          GitHub
+        </SocialTag>
+        <SocialTag href="https://medium.com/@victormc13">
+          <MediumIcon class="size-3 md:size-5" />
+          Medium
+        </SocialTag>
+        <SocialTag
+          href="mailto:victor.vimc99@gmail.com?subject=Portfolio-Victor%20Miñope"
+        >
+          <MailIcon class="size-3 md:size-5" />
+          Contáctame
+        </SocialTag>
+      </nav>
+    </SectionContainer>
+    <SectionContainer>
+      <h2 class="font-bold text-2xl flex items-center gap-x-2">
+        <SkillIcon class="size-12" />Mis habilidades
+      </h2>
+      <Skills />
+    </SectionContainer>
+    <SectionContainer class="md:mt-20">
+      <h2 class="font-bold text-2xl flex items-center gap-x-2">
+        <ProjectIcon class="size-12" />Mis proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
   </main>
 </Layout>

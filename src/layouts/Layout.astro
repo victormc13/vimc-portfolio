@@ -1,53 +1,68 @@
 ---
 import '@fontsource-variable/onest';
-import Header from '../components/Header.astro';
+import Header from '../components/Header/Header.astro';
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <!-- <div
-      class="absolute inset-0 -z-10 h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,119,255,0.3),rgba(255,255,255,0))]"
-    > -->
-    <div
-      class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#04437a_100%)]"
+      class="fixed inset-0 -z-10 h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,119,255,0.3),rgba(255,255,255,0))]"
+    ></div> -->
+      <div
+      class="fixed inset-0 -z-10 h-screen w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_10%,#04437a_100%)]"
     >
     </div>
+      <Header />
+      <slot />
+    </div>
   </body>
-  <Header />
-  <slot />
+  <style is:global>
+    :root {
+      color-scheme: light dark;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      width: 100%;
+      font-family: 'Onest Variable', system-ui, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .skills-grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .skills-grid-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    body.no-scroll {
+      overflow: hidden;
+    }
+  </style>
 </html>
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html {
-    width: 100%;
-    font-family: 'Onest Variable', system-ui, sans-serif;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-</style>
