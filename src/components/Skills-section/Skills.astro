@@ -1,0 +1,133 @@
+---
+import SkillBox from './SkillBox.astro';
+import JavaScriptIcon from '../../icons/technologies/JavaScript.astro';
+import TypeScriptIcon from '../../icons/technologies/TypeScript.astro';
+import ReactIcon from '../../icons/technologies/React.astro';
+import NodeIcon from '../../icons/technologies/Node.astro';
+import WebpackIcon from '../../icons/technologies/Webpack.astro';
+import JQueryIcon from '../../icons/technologies/JQuery.astro';
+import PythonIcon from '../../icons/technologies/Python.astro';
+import FlaskIcon from '../../icons/technologies/Flask.astro';
+import MySQLIcon from '../../icons/technologies/MySQL.astro';
+import MongoDBIcon from '../../icons/technologies/MongoDB.astro';
+import TailwindIcon from '../../icons/technologies/Tailwind.astro';
+import BootstrapIcon from '../../icons/technologies/Bootstrap.astro';
+import GitIcon from '../../icons/technologies/Git.astro';
+import GitHubIcon from '../../icons/technologies/GitHub.astro';
+import LinuxIcon from '../../icons/technologies/Linux.astro';
+---
+
+<div
+  class="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 md:gap-12 md:px-8 items-center"
+>
+  <p
+    class="text-lg md:text-xl max-w-xl text-center pt-5 text-balance md:text-pretty"
+  >
+    Tecnologías y herramientas con las que me siento cómodo trabajando
+  </p>
+  <div class="skills-grid-container skills-grid-wrapper">
+    <SkillBox
+      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      class="border-[#c5a816] hover:bg-[#c5a816]"
+      ><JavaScriptIcon class="size-16" />
+      <p class="text-normal text-base md:text-lg">JavaScript</p>
+    </SkillBox>
+    <SkillBox
+      href="https://www.typescriptlang.org/"
+      class="border-[#004fa3] hover:bg-[#004fa3]"
+      ><TypeScriptIcon class="size-16" />
+      <p class="text-normal text-base md:text-lg">TypeScript</p>
+    </SkillBox>
+    <SkillBox
+      href="https://react.dev/"
+      class="border-[#0086ac] hover:bg-[#0086ac]"
+    >
+      <ReactIcon class="size-16" />
+      <p class="text-normal text-base md:text-lg">React</p>
+    </SkillBox>
+    <SkillBox
+      href="https://nodejs.org/en"
+      class="border-[#8CC84B] hover:bg-[#076b00]"
+    >
+      <NodeIcon class="size-16" />
+      <p class="text-normal text-base md:text-lg">Node.js</p>
+    </SkillBox>
+    <SkillBox
+      href="https://webpack.js.org/"
+      class="border-[#1C78C0] hover:bg-[#1C78C0]"
+    >
+      <WebpackIcon class="size-16" />
+      <p class="text-normal text-base md:text-lg">Webpack</p>
+    </SkillBox>
+    <SkillBox
+      href="https://jquery.com/"
+      class="border-[#ffffff] hover:bg-[rgb(255,255,255)] hover:text-black"
+    >
+      <JQueryIcon class="size-16" />
+      <p class="text-base md:text-lg">JQuery</p>
+    </SkillBox>
+    <SkillBox
+      href="https://www.python.org/"
+      class="border-[#ffffff] hover:bg-[rgb(255,255,255)] hover:text-black"
+    >
+      <PythonIcon class="size-16" />
+      <p class="text-base md:text-lg">Python</p>
+    </SkillBox>
+    <SkillBox
+      href="https://flask.palletsprojects.com/en/3.0.x/"
+      class="border-[#ffffff] hover:bg-[rgb(255,255,255)] hover:text-black"
+    >
+      <FlaskIcon class="size-16" />
+      <p class="text-base md:text-lg">Flask</p>
+    </SkillBox>
+    <SkillBox
+      href="https://www.mysql.com/"
+      class="border-[#f8981d] hover:bg-[#f8981d] hover:text-[#00618A]"
+    >
+      <MySQLIcon class="size-16" />
+      <p class="text-base md:text-lg">MySQL</p>
+    </SkillBox>
+    <SkillBox
+      href="https://www.mongodb.com/docs/"
+      class="border-white hover:bg-[#134514] hover:text-white"
+    >
+      <MongoDBIcon class="size-16" />
+      <p class="text-base md:text-lg">MongoDB</p>
+    </SkillBox>
+    <SkillBox
+      href="https://tailwindcss.com/"
+      class="border-[#44a8b3] hover:bg-white hover:text-[#44a8b3]"
+    >
+      <TailwindIcon class="size-16" />
+      <p class="text-base md:text-lg">Tailwind</p>
+    </SkillBox>
+    <SkillBox
+      href="https://getbootstrap.com/"
+      class="border-[#5a01a2] hover:bg-white hover:text-black"
+    >
+      <BootstrapIcon class="size-16" />
+      <p class="text-base md:text-lg">Bootstrap</p>
+    </SkillBox>
+    <SkillBox
+      href="https://git-scm.com/"
+      class="border-[#EE513B] hover:bg-white hover:text-black"
+    >
+      <GitIcon class="size-16" />
+      <p class="text-base md:text-lg">Git</p>
+    </SkillBox>
+    <SkillBox
+      href="https://github.com/"
+      class="border-white hover:text-white hover:bg-black"
+    >
+      <GitHubIcon class="size-16" />
+      <p class="text-base md:text-lg">GitHub</p>
+    </SkillBox>
+    <SkillBox
+      href="https://github.com/"
+      class="border-[#CE0058] hover:text-black hover:bg-white"
+    >
+      <LinuxIcon class="size-16" />
+      <p class="text-base md:text-lg">Linux</p>
+    </SkillBox>
+  </div>
+</div>
