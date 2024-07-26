@@ -4,6 +4,48 @@ import RustIcon from '@icons/technologies/Rust.astro';
 import ReactIcon from '@icons/technologies/React.astro';
 import MongoIcon from '@icons/technologies/MongoDB.astro';
 import TailwindIcon from '@icons/technologies/Tailwind.astro';
+
+const TAGS = {
+    RUST: {
+        name: "Rust",
+        class: "bg-black",
+        icon: RustIcon,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-[#0086ac]",
+        icon: ReactIcon,
+    },
+    MONGODB: {
+        name: "MongoDB",
+        class: "bg-[#134514]",
+        icon: MongoIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#fff] text-[#44a8b3]",
+        icon: TailwindIcon,
+    }
+}
+
+const PROJECTS = [
+    {
+    title: "Swapper: Crypto Exchange",
+    description: "Cryptocurrency exchange platform called Swapper. User-friendly interface where could exchange fiat currencies like Soles or Dollars for cryptocurrencies such as Bitcoin and Ethereum with real-time trading features that allowed users to monitor market prices and execute trades instantly.",
+    link: "https://github.com/victormc13/swapper-exchange",
+    github: "https://github.com/victormc13/swapper-exchange",
+    image: "https://templ.io/app/uploads/2021/07/webp-for-wordpress-1740x1080.jpg",
+    techstack: [TAGS.RUST, TAGS.REACT, TAGS.MONGODB, TAGS.TAILWIND],
+    },
+    {
+    title: "Swapper: Crypto Exchange",
+    description: "Cryptocurrency exchange platform called Swapper. User-friendly interface where could exchange fiat currencies like Soles or Dollars for cryptocurrencies such as Bitcoin and Ethereum with real-time trading features that allowed users to monitor market prices and execute trades instantly.",
+    link: "https://github.com/victormc13/swapper-exchange",
+    github: "https://github.com/victormc13/swapper-exchange",
+    image: "https://templ.io/app/uploads/2021/07/webp-for-wordpress-1740x1080.jpg",
+    techstack: [TAGS.RUST, TAGS.REACT, TAGS.MONGODB, TAGS.TAILWIND],
+    }
+]
 ---
 
 <div
@@ -13,131 +55,42 @@ import TailwindIcon from '@icons/technologies/Tailwind.astro';
     class="text-lg md:text-xl max-w-xl text-center pt-5 text-balance md:text-pretty"
   >
     Mis últimos proyectos
-  </p><article
-    class="mx-auto w-full flex flex-col xl:flex-row md:items-center space-x-0 space-y-8 md:space-x-0 md:space-y-8 lg:space-x-0 lg:space-y-4 xl:space-x-8 xl:space-y-0"
-  >
+  </p>
+  {
+  PROJECTS.map(({title, description, link, github, image, techstack}) => (
+  <article class="mx-auto w-full flex flex-col xl:flex-row md:items-center space-x-0 space-y-8 md:space-x-0 md:space-y-8 lg:space-x-0 lg:space-y-4 xl:space-x-8 xl:space-y-0">
     <div class="w-full md:max-w-lg xl:w-1/2">
       <div
         class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
       >
         <img
-          src="/src/components/Projects-section/image.png"
+          src={image}
           alt="swapper project"
           class="object-cover w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
         />
       </div>
     </div>
+
     <div class="w-full md:max-w-lg xl:w-1/2">
-      <h3 class="text-xl md:text-2xl font-bold text-center md:text-start">
-        Swapper: Crypto Exchange
+        <h3 class="text-xl md:text-2xl font-bold text-center md:text-start">
+            {title}
       </h3>
       <div class="flex flex-wrap mt-2">
-        <ul class="w-auto flex flex-wrap gap-x-2 gap-y-1 mb-2">
-          <TechStack class="bg-black"><RustIcon class="size-6" />Rust</TechStack
-          >
-          <TechStack class="bg-[#0086ac]"
-            ><ReactIcon class="size-6" />React</TechStack
-          >
-          <TechStack class="bg-[#134514]"
-            ><MongoIcon class="size-6" />MongoDB</TechStack
-          >
-          <TechStack class="bg-[#fff] text-[#44a8b3]"
-            ><TailwindIcon class="size-6" />Tailwind</TechStack
-          >
+          <ul class="w-auto flex flex-wrap gap-x-2 gap-y-1 mb-2">
+              {
+              techstack.map((stack) => (
+              <TechStack class={`${stack.class}`}>
+              <stack.icon class="size-6" />
+              {stack.name}
+              </TechStack>
+              ))
+            }
         </ul>
         <p class="w-full mt-1 opacity-75 dark:text-gray-400">
-          Cryptocurrency exchange platform called Swapper. User-friendly
-          interface where could exchange fiat currencies like Soles or Dollars
-          for cryptocurrencies such as Bitcoin and Ethereum with real-time
-          trading features that allowed users to monitor market prices and
-          execute trades instantly.
-        </p>
-      </div>
-    </div>
-  </article><article
-    class="mx-auto w-full flex flex-col xl:flex-row md:items-center space-x-0 space-y-8 md:space-x-0 md:space-y-8 lg:space-x-0 lg:space-y-4 xl:space-x-8 xl:space-y-0"
-  >
-    <div class="w-full md:max-w-lg xl:w-1/2">
-      <div
-        class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
-      >
-        <img
-          src="/src/components/Projects-section/image.png"
-          alt="swapper project"
-          class="object-cover w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-        />
-      </div>
-    </div>
-    <div class="w-full md:max-w-lg xl:w-1/2">
-      <h3 class="text-xl md:text-2xl font-bold text-center md:text-start">
-        Swapper: Crypto Exchange
-      </h3>
-      <div class="flex flex-wrap mt-2">
-        <ul class="w-auto flex flex-wrap gap-x-2 gap-y-1 mb-2">
-          <TechStack class="bg-black"><RustIcon class="size-6" />Rust</TechStack
-          >
-          <TechStack class="bg-[#0086ac]"
-            ><ReactIcon class="size-6" />React</TechStack
-          >
-          <TechStack class="bg-[#134514]"
-            ><MongoIcon class="size-6" />MongoDB</TechStack
-          >
-          <TechStack class="bg-[#fff] text-[#44a8b3]"
-            ><TailwindIcon class="size-6" />Tailwind</TechStack
-          >
-        </ul>
-        <p class="w-full mt-1 opacity-75 dark:text-gray-400">
-          Cryptocurrency exchange platform called Swapper. User-friendly
-          interface where could exchange fiat currencies like Soles or Dollars
-          for cryptocurrencies such as Bitcoin and Ethereum with real-time
-          trading features that allowed users to monitor market prices and
-          execute trades instantly.
-        </p>
-      </div>
-    </div>
-  </article><article
-    class="mx-auto w-full flex flex-col xl:flex-row md:items-center space-x-0 space-y-8 md:space-x-0 md:space-y-8 lg:space-x-0 lg:space-y-4 xl:space-x-8 xl:space-y-0"
-  >
-    <div class="w-full md:max-w-lg xl:w-1/2">
-      <div
-        class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
-      >
-        <img
-          src="/src/components/Projects-section/image.png"
-          alt="swapper project"
-          class="object-cover w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-        />
-      </div>
-    </div>
-    <div class="w-full md:max-w-lg xl:w-1/2">
-      <h3 class="text-xl md:text-2xl font-bold text-center md:text-start">
-        Swapper: Crypto Exchange
-      </h3>
-      <div class="flex flex-wrap mt-2">
-        <ul class="w-auto flex flex-wrap gap-x-2 gap-y-1 mb-2">
-          <TechStack class="bg-black"><RustIcon class="size-6" />Rust</TechStack
-          >
-          <TechStack class="bg-[#0086ac]"
-            ><ReactIcon class="size-6" />React</TechStack
-          >
-          <TechStack class="bg-[#134514]"
-            ><MongoIcon class="size-6" />MongoDB</TechStack
-          >
-          <TechStack class="bg-[#fff] text-[#44a8b3]"
-            ><TailwindIcon class="size-6" />Tailwind</TechStack
-          >
-        </ul>
-        <p class="w-full mt-1 opacity-75 dark:text-gray-400">
-          Cryptocurrency exchange platform called Swapper. User-friendly
-          interface where could exchange fiat currencies like Soles or Dollars
-          for cryptocurrencies such as Bitcoin and Ethereum with real-time
-          trading features that allowed users to monitor market prices and
-          execute trades instantly.
+            {description}
         </p>
       </div>
     </div>
   </article>
+  ))}
 </div>
-<script>
-    console.log("hello nvim");
-</script> 
