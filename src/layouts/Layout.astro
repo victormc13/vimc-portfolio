@@ -24,49 +24,49 @@ const { title, description } = Astro.props;
     <!-- <div
       class="fixed inset-0 -z-10 h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(119,119,255,0.3),rgba(255,255,255,0))]"
     ></div> -->
-      <div
-      class="fixed inset-0 -z-10 h-screen w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_10%,#04437a_100%)]"
+    <div
+      class="fixed inset-0 -z-10 h-screen w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_10%,#032d54_100%)]"
     >
     </div>
-      <Header />
-      <slot />
-    </div>
+    <Header />
+    <slot />
   </body>
-  <style is:global>
-    :root {
-      color-scheme: light dark;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      width: 100%;
-      font-family: 'Onest Variable', system-ui, sans-serif;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-    }
-    .skills-grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-    }
-    .skills-grid-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .projects-grid-container{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    }
-    body.no-scroll {
-      overflow: hidden;
-    }
-  </style>
 </html>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    width: 100%;
+    font-family: 'Onest Variable', system-ui, sans-serif;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .skills-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+  .skills-grid-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .projects-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  body.no-scroll {
+    overflow: hidden;
+  }
+</style>
