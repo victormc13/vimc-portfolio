@@ -44,6 +44,7 @@ const { title, description } = Astro.props;
   html {
     width: 100%;
     font-family: 'Onest Variable', system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   body {
     display: flex;
@@ -51,6 +52,11 @@ const { title, description } = Astro.props;
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+  @media (prefers-reduced-motion: reduced) {
+    html {
+      scroll-behavior: auto;
+    }
   }
   .skills-grid-container {
     display: grid;
