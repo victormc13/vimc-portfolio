@@ -1,16 +1,18 @@
 ---
+import LinkedInIcon from '@icons/social-media/LinkedIn.astro';
+import GitHubIcon from '@icons/social-media/GitHub.astro';
+import MediumIcon from '@icons/social-media/Medium.astro';
+import MailIcon from '@icons/social-media/Mail.astro';
+import ProjectIcon from '@icons/section-headings/Projects.astro';
+import SkillIcon from '@icons/section-headings/Skills.astro';
+import AboutMeIcon from '@icons/section-headings/AboutMe.astro';
 import Layout from '../layouts/Layout.astro';
 import SectionContainer from '../components/SectionContainer.astro';
-import Badge from '../components/Badge.astro';
+import StatusBadge from '../components/StatusBadge.astro';
 import SocialTag from '../components/SocialTag.astro';
-import LinkedInIcon from '../icons/social-media/LinkedIn.astro';
-import GitHubIcon from '../icons/social-media/GitHub.astro';
-import MediumIcon from '../icons/social-media/Medium.astro';
-import MailIcon from '../icons/social-media/Mail.astro';
-import SkillIcon from '../icons/section-headings/Skills.astro';
-import Skills from '../components/Skills-section/Skills.astro';
 import Projects from '../components/Projects-section/Projects.astro';
-import ProjectIcon from '../icons/section-headings/Projects.astro';
+import Skills from '../components/Skills-section/Skills.astro';
+import AboutMe from '../components/AboutMe/AboutMe.astro';
 ---
 
 <Layout
@@ -18,7 +20,7 @@ import ProjectIcon from '../icons/section-headings/Projects.astro';
   description="Desarrollador web con más de 2 años de experiencia en el desarrollo de aplicaciones web. Creo en el poder transformador de la tecnología y me dedico a mejorar mis habilidades y convertirme en un activo valioso en el ámbito digital. Desde Lima, Perú."
 >
   <main>
-    <SectionContainer>
+    <SectionContainer id="inicio" class="lg:pt-48">
       <img
         class="rounded-full size-36 md:size-48 flex justify-center items-center mx-auto md:block md:m-0"
         src="https://avatars.githubusercontent.com/u/110580299?v=4"
@@ -31,7 +33,7 @@ import ProjectIcon from '../icons/section-headings/Projects.astro';
           href="https://www.linkedin.com/in/victormc13/"
           target="_blank"
           class="flex justify-center items-center text-center"
-          rel="noopener noreferrer"><Badge>Disponibilidad inmediata</Badge></a
+          rel="noopener noreferrer"><StatusBadge>Disponibilidad inmediata</StatusBadge></a
         >
       </h1>
       <h2 class="text-wrap md:text-2xl">
@@ -49,7 +51,9 @@ import ProjectIcon from '../icons/section-headings/Projects.astro';
           >
         </span>
       </h2>
-      <nav class="flex flex-wrap justify-center gap-4 pt-10 max-w-md mt-10 mx-auto">
+      <nav
+        class="flex flex-wrap justify-center gap-4 pt-10 max-w-md mt-10 mx-auto"
+      >
         <SocialTag href="https://www.linkedin.com/in/victormc13/">
           <LinkedInIcon class="size-3 md:size-5" />
           LinkedIn
@@ -70,17 +74,23 @@ import ProjectIcon from '../icons/section-headings/Projects.astro';
         </SocialTag>
       </nav>
     </SectionContainer>
-    <SectionContainer>
+    <SectionContainer id="proyectos" class="md:mt-20">
+      <h2 class="font-bold text-2xl flex items-center gap-x-2">
+        <ProjectIcon class="size-12" />Mis proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="habilidades">
       <h2 class="font-bold text-2xl flex items-center gap-x-2">
         <SkillIcon class="size-12" />Mis habilidades
       </h2>
       <Skills />
     </SectionContainer>
-    <SectionContainer class="md:mt-20">
+    <SectionContainer id="sobre-mí">
       <h2 class="font-bold text-2xl flex items-center gap-x-2">
-        <ProjectIcon class="size-12" />Mis proyectos
+        <AboutMeIcon class="size-12" />Sobre mí
       </h2>
-      <Projects />
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
