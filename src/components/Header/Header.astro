@@ -9,17 +9,23 @@ import MenuHamburgerIcon from '../../icons/header/MenuHamburger.astro';
   id="header"
   class="w-full h-20 md:h-24 flex justify-between items-center py-2 sm:justify-center md:p-0 fixed top-0 bg-transparent backdrop-blur-lg z-50 gap-2 md:gap-x-6 lg:gap-x-24 transition-shadow duration-700 border-[#097be6]/30"
 >
-  <a href="/" aria-label="Go to home page" class="w-1/3 md:w-1/4 flex justify-center">
+  <a
+    href="/"
+    aria-label="Go to home page"
+    class="w-1/3 md:w-1/4 flex justify-center"
+  >
     <VMover class="w-auto size-12 md:hidden" />
-    <VMseparated class="w-full size-14 md:size-20 lg:size-24 xl:size-28 hidden md:block" />
+    <VMseparated
+      class="w-full size-14 md:size-20 lg:size-24 xl:size-28 hidden md:block"
+    />
   </a>
   <Navbar id="navbar-default" />
-  <span class="w-1/3 md:w-1/4 flex justify-center">
+  <a href="./victormc_cv.pdf" target="_blank" class="w-1/3 md:w-1/4 flex justify-center">
     <button
       class="w-auto p-2 border-2 md:w-28 md:px-1 lg:text-nowrap md:py-3 lg:p-3 rounded-lg border-slate-400 hover:bg-blue-800"
       >Revisar CV</button
     >
-  </span>
+  </a>
 
   <span class="md:hidden w-1/3 flex justify-center md:justify-end">
     <button
